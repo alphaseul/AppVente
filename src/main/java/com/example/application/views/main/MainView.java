@@ -2,8 +2,8 @@ package com.example.application.views.main;
 
 import java.util.Optional;
 
+import com.example.application.views.account.Account;
 import com.example.application.views.home.Home;
-import com.example.application.views.login.Login;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -86,6 +86,7 @@ public class MainView extends AppLayout {
     private Component[] createMenuItems() {
         return new Tab[] {
                 createTab("Home", Home.class),
+                createTab("My Account", Account.class),
                 createTab("About", AboutView.class)
         };
     }
