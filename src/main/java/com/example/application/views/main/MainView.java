@@ -3,6 +3,7 @@ package com.example.application.views.main;
 import java.util.Optional;
 
 import com.example.application.views.account.Account;
+import com.example.application.views.addArticle.AddArticle;
 import com.example.application.views.home.Home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
@@ -87,7 +88,8 @@ public class MainView extends AppLayout {
         return new Tab[] {
                 createTab("Home", Home.class),
                 createTab("My Account", Account.class),
-                createTab("About", AboutView.class)
+                createTab("About", AboutView.class),
+                createTab("Add a Article", AddArticle.class)
         };
     }
 
