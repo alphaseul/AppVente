@@ -2,21 +2,22 @@ package com.example.application.views.login;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.login.AbstractLogin;
 import com.vaadin.flow.component.login.LoginForm;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.apache.coyote.http11.Http11AprProtocol;
 
 
 @Route("login")
-@PageTitle("Login")
+@PageTitle("login")
 public class Login extends Div {
 
     private final LoginForm loginForm ;
     public Login(){
+        VerticalLayout layout = new VerticalLayout();
+        layout.setAlignItems(FlexComponent.Alignment.CENTER);
         loginForm = new LoginForm();
         loginForm.addLoginListener(e -> {
             boolean isAuthenticated = authenticate(e);
@@ -25,15 +26,13 @@ public class Login extends Div {
             else
                 loginForm.setError(true);
         });
-        add(loginForm);
+        layout.add(loginForm);
+        add(layout);
     }
 
     private boolean authenticate(AbstractLogin.LoginEvent event){
         String password = "alpha";
-        if(event.getPassword().equals(password))
-            return true;
-        else
-            return false ;
+        return event.getPassword().equals(password);
     }
     private void navigateToMainPage(){
         UI.getCurrent().navigate("Account");

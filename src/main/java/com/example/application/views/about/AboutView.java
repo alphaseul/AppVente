@@ -11,7 +11,7 @@ import com.example.application.views.main.MainView;
 
 
 @Route(value = "about", layout = MainView.class)
-@PageTitle("About")
+@PageTitle("about")
 @CssImport("./styles/views/about/about-view.css")
 public class AboutView extends Div {
 
