@@ -1,17 +1,22 @@
 const div = document.createElement('div');
 div.innerHTML = '<custom-style><style include="lumo-color lumo-typography"></style></custom-style>';
 document.head.insertBefore(div.firstElementChild, document.head.firstChild);
-document.documentElement.setAttribute('theme', 'light');
 
 function addCssBlock(block) {
  const tpl = document.createElement('template');
  tpl.innerHTML = block;
  document.head.appendChild(tpl.content);
 }
-import $css_0 from 'Frontend/styles/views/main/main-view.css';
+import $css_0 from 'Frontend/styles/views/home/home.css';
 addCssBlock(`<custom-style><style>${$css_0}</style></custom-style>`);
-import $css_1 from 'Frontend/styles/views/about/about-view.css';
+import $css_1 from 'Frontend/styles/views/login/login.css';
 addCssBlock(`<custom-style><style>${$css_1}</style></custom-style>`);
+import $css_2 from 'Frontend/styles/views/bootstrap/css/bootstrap.min.css';
+addCssBlock(`<custom-style><style>${$css_2}</style></custom-style>`);
+import $css_3 from 'Frontend/styles/views/announce/announce.css';
+addCssBlock(`<custom-style><style>${$css_3}</style></custom-style>`);
+import $css_4 from 'Frontend/styles/views/about/about-view.css';
+addCssBlock(`<custom-style><style>${$css_4}</style></custom-style>`);
 
 import '@polymer/iron-icon/iron-icon.js';
 import '@polymer/iron-list/iron-list.js';
@@ -97,4 +102,3 @@ import '@vaadin/flow-frontend/dndConnector.js';
 import '@vaadin/flow-frontend/gridConnector.js';
 import '@vaadin/flow-frontend/ironListConnector.js';
 import '@vaadin/flow-frontend/selectConnector.js';
-import 'Frontend/styles/shared-styles.js';

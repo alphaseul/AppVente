@@ -1,22 +1,28 @@
 package com.example.application.views.login;
 
+
+import com.example.application.views.navBar.NavBar;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.login.AbstractLogin;
 import com.vaadin.flow.component.login.LoginForm;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.apache.coyote.http11.Http11AprProtocol;
 
 
 @Route("login")
-@PageTitle("Login")
-public class Login extends Div {
-
+@PageTitle("login")
+@CssImport("./styles/views/login/login.css")
+public class Login extends NavBar {
     private final LoginForm loginForm ;
     public Login(){
+        Div container = new Div();
+        container.setId("login");
+        VerticalLayout layout = new VerticalLayout();
+        layout.setAlignItems(FlexComponent.Alignment.CENTER);
         loginForm = new LoginForm();
         loginForm.addLoginListener(e -> {
             boolean isAuthenticated = authenticate(e);
@@ -25,18 +31,17 @@ public class Login extends Div {
             else
                 loginForm.setError(true);
         });
-        add(loginForm);
+        container.add(loginForm);
+        layout.add(container);
+        add(layout);
     }
 
     private boolean authenticate(AbstractLogin.LoginEvent event){
         String password = "alpha";
-        if(event.getPassword().equals(password))
-            return true;
-        else
-            return false ;
+        return event.getPassword().equals(password);
     }
     private void navigateToMainPage(){
-        UI.getCurrent().navigate("Account");
+        UI.getCurrent().navigate("home");
     }
 
 }

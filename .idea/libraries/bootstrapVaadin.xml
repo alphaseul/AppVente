@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="bootstrapVaadin">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../bootstrapVaadin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../bootstrapVaadin" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../bootstrapVaadin" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../bootstrapVaadin" recursive="false" type="SOURCES" />
+  </library>
+</component>
